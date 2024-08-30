@@ -7,9 +7,7 @@ export default defineConfig({
     outDir: "dist2",
   },
   server: {
-    port: import.meta.env.VITE_PORT
-      ? parseInt(import.meta.env.VITE_PORT)
-      : 5000,
+    port: 5000,
     open: true,
     proxy: {
       "/api": {
