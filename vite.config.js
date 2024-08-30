@@ -11,7 +11,7 @@ export default defineConfig({
     open: true,
     proxy: {
       "/api": {
-        target: import.meta.env.VITE_BACKEND_URL || "http://localhost:8000",
+        target: "https://react-libraries-backend.onrender.com",
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/api/, ""),
