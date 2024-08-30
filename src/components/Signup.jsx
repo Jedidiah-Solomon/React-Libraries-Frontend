@@ -13,6 +13,9 @@ const Signup = () => {
   const [message, setMessage] = useState("");
   const [messageType, setMessageType] = useState("");
 
+  const backendURL =
+    import.meta.env.VITE_BACKEND_URL || "http://localhost:8000";
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -46,7 +49,7 @@ const Signup = () => {
     }
 
     try {
-      const response = await axios.post("/api/users/signup", {
+      const response = await axios.post(`${backendURL}/api/users/signup`, {
         fullName: formattedFullName,
         userName,
         email: formattedEmail,

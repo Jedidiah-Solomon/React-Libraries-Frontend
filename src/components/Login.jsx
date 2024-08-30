@@ -14,12 +14,14 @@ const Login = () => {
   const [message, setMessage] = useState("");
   const [messageType, setMessageType] = useState("");
   const navigate = useNavigate();
+  const backendURL =
+    import.meta.env.VITE_BACKEND_URL || "http://localhost:8000";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("/api/users/login", {
+      const response = await axios.post(`${backendURL}/api/users/login`, {
         email: email.toLowerCase(),
         password,
       });

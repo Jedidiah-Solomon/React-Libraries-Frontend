@@ -7,10 +7,15 @@ const Dashboard = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
+  const backendURL =
+    import.meta.env.VITE_BACKEND_URL || "http://localhost:8000";
+
   useEffect(() => {
     const checkSession = async () => {
       try {
-        await axios.get("/api/users/verifyToken", { withCredentials: true });
+        await axios.get(`${backendURL}/api/users/verifyToken`, {
+          withCredentials: true,
+        });
         console.log("Login successful");
         setLoading(false);
       } catch (error) {
