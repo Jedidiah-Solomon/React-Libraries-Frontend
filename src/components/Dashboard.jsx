@@ -13,7 +13,7 @@ const Dashboard = () => {
   useEffect(() => {
     const checkSession = async () => {
       try {
-        await axios.get(`${backendURL}/api/users/verifyToken`, {
+        await axios.get(`${backendURL}/api/auth/verifyToken`, {
           withCredentials: true,
         });
         console.log("Login successful");
