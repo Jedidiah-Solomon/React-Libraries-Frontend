@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+const backendURL = import.meta.env.VITE_BACKEND_URL || "http://localhost:8000";
+
 const SendEmail = () => {
   const [emailData, setEmailData] = useState({
     to: "",
@@ -22,7 +24,10 @@ const SendEmail = () => {
   const sendEmail = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/email/send", emailData);
+      const response = await axios.post(
+        `${backendURL}/api/email/send`,
+        emailData
+      );
       console.log(response.data.message);
       alert("Email sent successfully!");
       clearForm();
