@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { toast } from "react-toastify";
 
 const Signup = () => {
   const [fullName, setFullName] = useState("");
@@ -59,6 +60,11 @@ const Signup = () => {
 
       setMessage(response.data.message);
       setMessageType("success");
+      toast.success("Signup successful!!!", {
+        position: "bottom-right",
+        draggable: true,
+        theme: "dark",
+      });
       console.log("Signup Successful!!!");
 
       setFullName("");
@@ -74,6 +80,7 @@ const Signup = () => {
     } catch (error) {
       setMessage(error.response?.data?.message || "Error signing up");
       setMessageType("error");
+      toast.error(error.response?.data?.message || "Error signing up");
 
       setTimeout(() => {
         setMessage("");
