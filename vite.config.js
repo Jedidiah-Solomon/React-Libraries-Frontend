@@ -18,4 +18,9 @@ export default defineConfig({
       },
     },
   },
+  resolve: {
+    alias: {
+      swiper: "swiper/swiper-bundle.esm.js",
+    },
+  },
 });

@@ -1,5 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Card from "../components/Card";
+import ProjectShowcase from "./ProjectShowcase";
 
 const Homepage = () => {
   return (
@@ -31,6 +33,12 @@ const Homepage = () => {
           description="Go deeper into advanced React concepts."
         />
       </div>
+      <div className="mt-8">
+        <Link to="/hero-slider" className="text-blue-500 hover:underline">
+          Go to Hero Slider
+        </Link>
+      </div>
+      <ProjectShowcase />
     </div>
   );
 };

@@ -9,6 +9,8 @@ import Dashboard from "./components/Dashboard";
 import SendEmail from "./components/SendEmail";
 import { ToastContainer } from "react-toastify";
 import Stats from "./components/Stats";
+import HeroSlider from "./components/HeroSlider";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const App = () => {
   return (
@@ -23,6 +25,7 @@ const App = () => {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/sendemail" element={<SendEmail />} />
             <Route path="/stats" element={<Stats />} />
+            <Route path="/hero-slider" element={<HeroSlider />} />
           </Routes>
         </main>
         <Footer />
