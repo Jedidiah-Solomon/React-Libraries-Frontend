@@ -10,7 +10,7 @@ import SendEmail from "./components/SendEmail";
 import { ToastContainer } from "react-toastify";
 import Stats from "./components/Stats";
 import HeroSlider from "./components/HeroSlider";
-import "@fortawesome/fontawesome-free/css/all.min.css";
+// import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const App = () => {
   return (

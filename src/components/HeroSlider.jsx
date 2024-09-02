@@ -50,11 +50,11 @@ const HeroSlider = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000, // Adjusted for better visibility
+    autoplaySpeed: 3000,
   };
 
   return (
-    <div className="relative h-screen overflow-hidden">
+    <div className="relative h-1/2 overflow-hidden">
       {/* Custom styles */}
       <style>
         {`
